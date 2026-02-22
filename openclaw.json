@@ -1,0 +1,27 @@
+{
+  "models": {
+    "providers": {
+      "google": {
+        "apiKey": "AIzaSyBSbXSpp75oY-Qv4BAlX_he6XUC6jxDlq8",
+        "api": "google-ai"
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "google/gemini-1.5-flash"
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "botToken": "8102954047:AAHoSghmO69jW7Z2Tlo0lJFXgwKbcyG-jYc"
+    },
+    "whatsapp": {
+      "dmPolicy": "allowlist",
+      "selfChatMode": true,
+      "allowFrom": ["+967711673412"]
+    }
+  }
+}
