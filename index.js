@@ -1,9 +1,9 @@
-const { createOpenClaw } = require('@openclaw/core');
+const { OpenClaw } = require('openclaw');
 
 async function start() {
-  const bot = await createOpenClaw();
+  const bot = new OpenClaw();
   await bot.start();
-  console.log("Bot is online!");
+  console.log("OpenClaw is online on Render!");
 }
 
 start().catch(console.error);
