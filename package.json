@@ -6,9 +6,6 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "openclaw": "latest",
-    "openclaw-channel-telegram": "latest",
-    "openclaw-channel-whatsapp": "latest",
-    "openclaw-provider-google": "latest"
+    "openclaw": "1.4.0"
   }
 }
