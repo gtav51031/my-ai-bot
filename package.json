@@ -6,6 +6,6 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "openclaw": "latest"
+    "openclaw": "github:openclaw/openclaw"
   }
 }
