@@ -6,10 +6,9 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "@openclaw/core": "latest",
-    "@openclaw/channel-telegram": "latest",
-    "@openclaw/channel-whatsapp": "latest",
-    "@openclaw/provider-google": "latest"
+    "openclaw": "latest",
+    "openclaw-channel-telegram": "latest",
+    "openclaw-channel-whatsapp": "latest",
+    "openclaw-provider-google": "latest"
   }
 }
-
