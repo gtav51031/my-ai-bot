@@ -6,6 +6,6 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "openclaw": "1.4.0"
+    "openclaw": "latest"
   }
 }
