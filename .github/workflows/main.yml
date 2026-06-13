@@ -1,8 +1,9 @@
+
 name: Daily Reward Auto-Claim
 
 on:
   schedule:
-    - cron: '0 8 * * *' # يتم التشغيل يومياً الساعة 8 صباحاً بتوقيت جرينتش
+    - cron:  0 8 * * * 
   workflow_dispatch:
 
 jobs:
@@ -15,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version:  3.9 
 
       - name: Install dependencies
         run: pip install requests
@@ -24,18 +25,4 @@ jobs:
         env:
           AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
         run: |
-          python -c "
-import requests
-import os
-
-token = os.environ.get('AUTH_TOKEN')
-url = 'https://giftcode.betelgeuse.app/api/daily-rewards/claim'
-headers = {'Authorization': token, 'User-Agent': 'okhttp/5.3.2'}
-
-try:
-    response = requests.post(url, headers=headers)
-    print(f'Status Code: {response.status_code}')
-    print(f'Response: {response.text}')
-except Exception as e:
-    print(f'Error: {e}')
-"
+          python -c "import requests, os; token = os.environ.get( AUTH_TOKEN ); url =  https://giftcode.betelgeuse.app/api/daily-rewards/claim ; headers = { Authorization : token,  User-Agent :  okhttp/5.3.2 }; response = requests.post(url, headers=headers); print(f Status Code: {response.status_code} ); print(f Response: {response.text} )"
