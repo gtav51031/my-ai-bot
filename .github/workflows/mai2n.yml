@@ -2,7 +2,7 @@ name: Daily Reward Auto-Claim
 
 on:
   schedule:
-    - cron: '0 8 * * *'
+    - cron:  '0 8 * * *'
   workflow_dispatch:
 
 jobs:
@@ -12,11 +12,12 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: '3.9' 
 
       - name: Run Claim Script
         env:
           AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+          USER_ID: "4094894" # قمت بإضافة معرفك هنا لسهولة التعديل
         run: |
           pip install requests
-          python -c "import requests, os; t = os.environ.get('AUTH_TOKEN'); r = requests.post('https://giftcode.betelgeuse.app/api/daily-rewards/claim', headers={'Authorization': t, 'User-Agent': 'okhttp/5.3.2'}); print(r.status_code, r.text)"
+          python -c "import requests, os; t = os.environ.get('AUTH_TOKEN'); uid = os.environ.get('USER_ID'); r = requests.post(f'https://giftcode.betelgeuse.app/api/daily-rewards/claim?user_id={uid}', headers={'Authorization': t, 'User-Agent': 'okhttp/5.3.2'}); print(r.status_code, r.text)"
